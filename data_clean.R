@@ -21,10 +21,43 @@ if(clean == 1){
   write_csv(sample, "Rodent_Inspection_Lite.csv")
 }
 
-createFunction <- function(data){
+chartTest <- function(data, chart_type){
+  # distinct zip and distinct year
+  zip_list <- as.list(data$ZIP_CODE)
+  zip_list <- unique(zip_list)
+  year_list <- format(as.Date(data$INSPECTION_DATE, format="%d/%m/%Y"),"%Y")
+  year_list <- unique(year_list)
   
-  #for(i in){
-    
-  #}
-  
+  for(year in year_list){
+    year_data <- data %>% filter( format(as.Date(INSPECTION_DATE, format="%d/%m/%Y"),"%Y") == year)
+    for(zip in zip_list){
+      year_zip_data <- year_data %>% filter(ZIP_CODE == zip)
+      filename <- ""
+      filename <- paste(chart_type, toString(zip), sep = "_")
+      filename <- paste(filename, toString(year), sep="_")
+      filename <- paste(filename, ".jpg", sep="")
+      
+      jpeg(filename)
+      
+      ggplot(data=year_zip_data, aes(x=INSPECTION_TYPE)) + geom_bar()
+      
+      dev.off()
+    }
+  }
+}
+
+chartTest(data, "hist")
+
+test <- function(yzd){
+  jpeg("filename.jpg")
+  ggplot(data=yzd, aes(x=INSPECTION_TYPE)) + geom_bar()
+  dev.off()
+}
+test(year_zip_data)
+
+num <- c(1,2)
+for(i in num){
+jpeg("filename.jpg")
+ggplot(data=year_zip_data, aes(x=INSPECTION_TYPE)) + geom_bar()
+dev.off()
 }
