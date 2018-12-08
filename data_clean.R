@@ -11,4 +11,6 @@ data <- data %>% drop_na()
 
 data <- tibble::rowid_to_column(data, "ID")
 
-#write_csv(data, "Rodent_Inspection_Lite.csv")
+sample <- sample_n(data, 0.2 * nrow(data))
+
+write_csv(sample, "Rodent_Inspection_Lite.csv")
