@@ -10,12 +10,15 @@
 	</head>
 	
 	<body>
+    <h2>NYC Rodent Inspection Visualization</h2>
     <!-- Filters -->
     <form method="POST" action="/plot">
-      <h3> Data ranges from Aug 21, 2009 to Nov 8, 2018 </h3>
+      <p> Data ranges from Aug 21, 2009 to Nov 8, 2018 </p>
 
+      <p>
       <!-- asking for month -->
-      Month: 
+      Month: (check nothing if you want all months)
+      <br>
 
       <input type="checkbox" name="jan" value="1">January
       <input type="checkbox" name="feb" value="2">February
@@ -31,8 +34,13 @@
       <input type="checkbox" name="dec" value="12">December
 
       <br>
+      </p>
 
-      Year:
+      <p>
+      Year: (check nothing if you want all years)
+
+      <br>
+
       <input type="checkbox" name="y09" value="2009">2009
       <input type="checkbox" name="y10" value="2010">2010
       <input type="checkbox" name="y11" value="2011">2011
@@ -45,24 +53,19 @@
       <input type="checkbox" name="y18" value="2018">2018
 
       <br>
+      </p>
 
-      Borough:
+      <p>
+      Borough: (check nothing if you want all boroughs)
+      <br>
 
       <input type="checkbox" name="b1" value="1">Manhattan
       <input type="checkbox" name="b2" value="2">Bronx
       <input type="checkbox" name="b3" value="3">Brooklyn
       <input type="checkbox" name="b4" value="4">Queens
       <input type="checkbox" name="b5" value="5">Staten Island
-
-
-
-
-      <!--
-      <p>Zip Code: <input type="number" name="zip" required> </p>
-      -->
-      <br>
+      </p>
       <input type="submit" value="Submit">
-      <br>
     </form>
 
 
