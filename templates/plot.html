@@ -68,6 +68,24 @@
       <input type="submit" value="Submit">
     </form>
 
+    <h3>Summary:</h3>
+    Number of Cases:  {{num_point}} 
+    <p>
+    <p>Inspection Type*:</p>
+    - Inital:          {{ini_num}} cases<br>
+    - Compliance:      {{com_num}} cases<br>
+    - Bait:            {{bai_num}} cases<br>
+    - Clean Up:        {{cle_num}} cases<br>
+    </p>
+    <p>
+    * More details regarding the inspection types can be found at the bottom of the page.
+    </p>
+    <br>
+    <!--
+    <svg width="400" height="400">
+    </svg>
+  -->
+
 
 
 
@@ -389,11 +407,23 @@
        d="M 330.5173,387.095 L 337.4685,339.0356 L 347.4115,287.6582 L 416.0244,163.8993 L 436.0881,108.3197 L 461.2597,55.1342 L 477.417,4.2656 L 506.4691,-108.6225 L 509.859,-135.9167 L 494.9017,-136.5963 L 429.3499,-176.0465 L 429.3499,-176.0465 M 23.874258,762.01237 L 15.438807,748.06562 L 15.8766,725.4789 L 20.5966,712.3828 L 32.4488,702.5101 L 26.2929,665.7181 L 30.6237,652.7805 L 51.9417,636.4838 L 69.9688,639.0559 L 74.1993,633.3432 L 82.7553,604.6089 L 86.3756,583.5203 L 95.5661,567.6813 L 95.718,562.995 L 89.7451,552.8547 L 92.3878,530.6799 L 89.8481,520.6981 L 91.8685,508.9452 L 110.72,485.4236 L 114.3919,482.3763 L 120.1492,481.5312 L 171.8576,489.147 L 195.8386,485.8479 L 216.9817,478.8271 L 238.9885,478.4258 L 243.7548,475.4324 L 243.7548,475.4324 M 330.72007,386.91077 L 314.29386,422.89523 L 290.03024,473.16601 M 242.73588,476.38317 L 250.07722,472.25899 L 290.52631,472.08876" />
   </g>
 </svg>
+
+    <p>
+      Explaination and clarification:
+      <br>
+      - Initial Inspection - Inspection conducted in response to a 311 complaint, or a proactive inspection conducted through our neighborhood indexing program. 
+      <br>
+      - Compliance Inspection - If a property fails its initial inspection, the Health Department will conduct a follow up (Compliance) inspection. 
+      <br>
+      - Baiting - Application of rodenticide, or monitoring visit by a Health Department Pest Control Professional. 
+      <br>
+      - Clean Up - The removal of garbage and clutter from a property by the Health Department.
+    </p>
 		<script type="text/javascript">
 
       //  scale functions
-      var xScale = d3.scaleLinear().domain([0,800]).range([-74.27, -73.68]);
-      var yScale = d3.scaleLinear().domain([0,757]).range([40.92, 40.49]);
+      var xScale = d3.scaleLinear().domain([0,{{width}}]).range([{{xmin}}, {{xmax}}]);
+      var yScale = d3.scaleLinear().domain([0,{{height}}]).range([{{ymax}}, {{ymin}}]);
 
       // get the location
       var coor = []

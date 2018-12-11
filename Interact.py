@@ -21,7 +21,7 @@ xmin = -74.27
 xmax = -73.68
 
 # read data from URL
-url = "https://raw.githubusercontent.com/htmajorcn/edav_project/master/Rodent_Inspection_Lite.csv"
+url = "https://onedrive.live.com/download?cid=1ABF8B3A88607926&resid=1ABF8B3A88607926%2116840&authkey=AFQr6OPqQXwEK6U"
 s = requests.get(url).content
 data = pd.read_csv(io.StringIO(s.decode('utf-8')))
 
@@ -148,10 +148,18 @@ def plot():
 	longitude = subset['LONGITUDE'].tolist()
 	location = longitude + latitude
 
+
+	# get the number of different inspection type
+	ini_num = len(subset[subset["INSPECTION_TYPE"] == "INITIAL"])
+	com_num = len(subset[subset["INSPECTION_TYPE"] == "COMPLIANCE"])
+	bai_num = len(subset[subset["INSPECTION_TYPE"] == "BAIT"])
+	cle_num = len(subset[subset["INSPECTION_TYPE"] == "CLEAN_UPS"])
+
 	context = dict(data = location)
 
 	return render_template("plot.html", num_point=num_point, **context, 
-		xmax=xmax, xmin=xmin, ymax=ymax, ymin=ymin, width=width, height=height)
+		xmax=xmax, xmin=xmin, ymax=ymax, ymin=ymin, width=width, height=height,
+		ini_num=ini_num, com_num=com_num, bai_num=bai_num, cle_num=cle_num)
 
 
 if __name__ == "__main__":
