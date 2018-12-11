@@ -5,19 +5,28 @@
 		<title>NYC Rodent</title>
 		
 		<script src="https://d3js.org/d3.v4.min.js"></script>  <!-- link to D3 library -->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
 	</head>
+
+  <div class="jumbotron text-center">
+  <h2>NYC Rodent Inspection Visualization</h2>
+  </div>
 	
+  <div class="container">
 	<body>
-    <h2>NYC Rodent Inspection Visualization</h2>
     <!-- Filters -->
     <form method="POST" action="/plot">
-      <p> Data ranges from Aug 21, 2009 to Nov 8, 2018 </p>
 
-      <p>
+      <p> Data ranges from Aug 21, 2009 to Nov 8, 2018, original data can be found here:
+        <a href="https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj">Rodent Inspection</a></p>
+
+      <div class="form-group">
       <!-- asking for month -->
-      Month: (check nothing if you want all months)
+      <b>Month:</b> (check nothing if you want all months)
       <br>
 
       <input type="checkbox" name="jan" value="1">January
@@ -33,11 +42,11 @@
       <input type="checkbox" name="nov" value="11">November
       <input type="checkbox" name="dec" value="12">December
 
-      <br>
       </p>
+    </div>
 
-      <p>
-      Year: (check nothing if you want all years)
+      <div class="form-group">
+      <b>Year:</b> (check nothing if you want all years)
 
       <br>
 
@@ -53,10 +62,10 @@
       <input type="checkbox" name="y18" value="2018">2018
 
       <br>
-      </p>
+      </div>
 
-      <p>
-      Borough: (check nothing if you want all boroughs)
+      <div class="form-group">
+      <b>Borough:</b> (check nothing if you want all boroughs)
       <br>
 
       <input type="checkbox" name="b1" value="1">Manhattan
@@ -64,8 +73,8 @@
       <input type="checkbox" name="b3" value="3">Brooklyn
       <input type="checkbox" name="b4" value="4">Queens
       <input type="checkbox" name="b5" value="5">Staten Island
-      </p>
-      <input type="submit" value="Submit">
+      </div>
+      <input type="submit" value="Visualize!">
     </form>
 
     <h3>Summary:</h3>
@@ -407,9 +416,8 @@
        d="M 330.5173,387.095 L 337.4685,339.0356 L 347.4115,287.6582 L 416.0244,163.8993 L 436.0881,108.3197 L 461.2597,55.1342 L 477.417,4.2656 L 506.4691,-108.6225 L 509.859,-135.9167 L 494.9017,-136.5963 L 429.3499,-176.0465 L 429.3499,-176.0465 M 23.874258,762.01237 L 15.438807,748.06562 L 15.8766,725.4789 L 20.5966,712.3828 L 32.4488,702.5101 L 26.2929,665.7181 L 30.6237,652.7805 L 51.9417,636.4838 L 69.9688,639.0559 L 74.1993,633.3432 L 82.7553,604.6089 L 86.3756,583.5203 L 95.5661,567.6813 L 95.718,562.995 L 89.7451,552.8547 L 92.3878,530.6799 L 89.8481,520.6981 L 91.8685,508.9452 L 110.72,485.4236 L 114.3919,482.3763 L 120.1492,481.5312 L 171.8576,489.147 L 195.8386,485.8479 L 216.9817,478.8271 L 238.9885,478.4258 L 243.7548,475.4324 L 243.7548,475.4324 M 330.72007,386.91077 L 314.29386,422.89523 L 290.03024,473.16601 M 242.73588,476.38317 L 250.07722,472.25899 L 290.52631,472.08876" />
   </g>
 </svg>
-
     <p>
-      Explaination and clarification:
+      Explaination and Clarification:
       <br>
       - Initial Inspection - Inspection conducted in response to a 311 complaint, or a proactive inspection conducted through our neighborhood indexing program. 
       <br>
@@ -418,7 +426,17 @@
       - Baiting - Application of rodenticide, or monitoring visit by a Health Department Pest Control Professional. 
       <br>
       - Clean Up - The removal of garbage and clutter from a property by the Health Department.
-    </p>
+  </p>
+  </div>
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    Columbia University STAT 5702 EDAV Final Project<br>
+    Hantang Zhou, Lizhou He, Mingfeng Li, Nan You<br>
+    Dec, 2018, NYC
+
+  </div>
+
+
+
 		<script type="text/javascript">
 
       //  scale functions
